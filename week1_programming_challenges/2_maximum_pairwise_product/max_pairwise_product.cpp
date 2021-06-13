@@ -24,6 +24,7 @@ int main() {
         std::cin >> numbers[i];
     }
 
-    std::cout << MaxPairwiseProduct(numbers); << "\n";
+    std::cout << n << "\n";
+    std::cout << MaxPairwiseProduct(numbers) << "\n";
     return 0;
 }

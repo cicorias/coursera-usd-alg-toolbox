@@ -1,7 +1,6 @@
 # python3
 
-
-def max_pairwise_product(numbers):
+def max_pairwise_product_naive(numbers):
     n = len(numbers)
     max_product = 0
     for first in range(n):
@@ -10,6 +9,11 @@ def max_pairwise_product(numbers):
                 numbers[first] * numbers[second])
 
     return max_product
+
+def max_pairwise_product(numbers):
+    l = sorted(numbers)
+    return l[-2] * l[-1]
+
 
 
 if __name__ == '__main__':
