@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-// #include <algorithm>
+#include <algorithm>
 
 typedef long long int int64;
 
@@ -18,6 +18,16 @@ int64 MaxPairwiseProduct(const std::vector<int64_t>& numbers) {
     return max_product;
 }
 
+int64 MaxViaSotr(const std::vector<int64_t>& numbers){
+    int64_t rv = 0;
+    std::sort(numbers.front(), numbers.back());
+
+    return (numbers.back() * (numbers.back()-1)); 
+    
+
+
+}
+
 int main() {
     int64_t n;
     std::cin >> n;
@@ -26,7 +36,8 @@ int main() {
         std::cin >> numbers[i];
     }
 
-    std::cout << "using 64" << sizeof(int64_t) << "\n";
+    std::cout << "using 64bit: " << sizeof(int64_t) << "\n";
     std::cout << MaxPairwiseProduct(numbers) << "\n";
+    std::cout << MaxViaSotr(numbers) << "\n";
     return 0;
 }
